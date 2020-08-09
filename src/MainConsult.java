@@ -48,10 +48,10 @@ public class MainConsult {
         accion.add("mezclar");
         receta.setAccion(accion);
         prologRepositorio.InsertRecipe(receta);
-        Query q2 = new Query("listing(receta)");
+        //Query q2 = new Query("listing(receta)");
         Set<String> plates = prologRepositorio.getAllPlatosIngredients(ingredientes);
-        Query q = new Query("listing(receta)");
-        q.hasSolution();
+        //Query q = new Query("listing(receta)");
+        //q.hasSolution();
         System.out.println(plates);
 
     }

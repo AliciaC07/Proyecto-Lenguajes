@@ -11,7 +11,6 @@ import java.util.*;
 public class PrologRepositorio {
 
     private static Query Platos;
-    private static Query Plato;
     private static PrologRepositorio prologRepositorio = null;
 
     public static PrologRepositorio prologRepository(){
@@ -24,7 +23,6 @@ public class PrologRepositorio {
 
     public  Set<String> getAllPlatosConBatidora(){
         Set<String> All = new HashSet<>();
-        Query Platos;
         String t1 = "platos_con_batidora(X)";
         Platos = new Query(t1);
         System.out.println("consulta: "+(Platos.hasSolution() ? "succeded":"failed"));
@@ -40,7 +38,7 @@ public class PrologRepositorio {
     public  Set<String> getAllPlatosSinBatidora(){
         Set<String> All = new HashSet<>();
         String t1 = "sin_batidora(Platos)";
-        Query Platos;
+
         Platos = new Query(t1);
         System.out.println("consulta: "+(Platos.hasSolution() ? "succeded":"failed"));
         while(Platos.hasMoreSolutions()){
@@ -55,7 +53,6 @@ public class PrologRepositorio {
     public  Set<String> getAllPlatosSinButter(){
         Set<String> All = new HashSet<>();
         String t1 = "sin_butter(Platos)";
-        Query Platos;
         Platos = new Query(t1);
         System.out.println("consulta: "+(Platos.hasSolution() ? "succeded":"failed"));
         while(Platos.hasMoreSolutions()){
@@ -69,7 +66,6 @@ public class PrologRepositorio {
     public  Set<String> getAllSinEggBati(){
         Set<String> All = new HashSet<>();
         String t1 = "sin_eggs_bati(Platos)";
-        Query Platos;
         Platos = new Query(t1);
         System.out.println("consulta: "+(Platos.hasSolution() ? "succeded":"failed"));
         while(Platos.hasMoreSolutions()){
@@ -157,10 +153,10 @@ public class PrologRepositorio {
         String consulta = ConsultInsert(receta);
         String t2 = "assertz(plato("+receta.getNombre()+"))";
         Platos = new Query(t2);
-        ///System.out.println("consulta: "+(Platos.hasSolution() ? "succeded":"failed"));
+        System.out.println("consulta: "+(Platos.hasSolution() ? "succeded":"failed"));
         String t1 = "assertz("+consulta+")";
         Platos = new Query(t1);
-        //System.out.println("consulta: "+(Platos.hasSolution() ? "succeded":"failed"));
+        System.out.println("consulta: "+(Platos.hasSolution() ? "succeded":"failed"));
 
 
     }
