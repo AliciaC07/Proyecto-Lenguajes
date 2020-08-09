@@ -17,6 +17,10 @@ public class Receta {
         this.accion = accion;
     }
 
+    public Receta() {
+
+    }
+
     public String getNombre() {
         return nombre;
     }

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jpl">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Videos/jpl.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
