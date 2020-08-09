@@ -1,5 +1,7 @@
 package modelos;
 
+import java.awt.image.AreaAveragingScaleFilter;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Receta {
@@ -9,16 +11,18 @@ public class Receta {
     private List<String> utensilios;
     private List<String> accion;
 
-    public Receta(String nombre, String procedimiento, List<Ingrediente> ingrediente, List<String> utensilios, List<String> accion) {
-        this.nombre = nombre;
-        this.procedimiento = procedimiento;
-        this.ingrediente = ingrediente;
-        this.utensilios = utensilios;
-        this.accion = accion;
+    public Receta() {
+        this.ingrediente = new ArrayList<>();
+        this.utensilios = new ArrayList<>();
+        this.accion = new ArrayList<>();
     }
 
-    public Receta() {
-
+    public Receta(String nombre, String procedimiento) {
+        this.nombre = nombre;
+        this.procedimiento = procedimiento;
+        this.ingrediente = new ArrayList<>();
+        this.utensilios = new ArrayList<>();
+        this.accion = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -59,5 +63,34 @@ public class Receta {
 
     public void setAccion(List<String> accion) {
         this.accion = accion;
+    }
+
+    public String getNombreProlog() {
+        String procesado = nombre.replaceAll(" ", "_");
+        return procesado.toLowerCase();
+    }
+
+    public Float getCarbohidratos() {
+        Float carbos = 0.0f;
+        for(Ingrediente i : this.getIngrediente()) {
+            carbos += i.getCarbohidratos();
+        }
+        return carbos;
+    }
+
+    public Float getLipidos() {
+        Float lipidos = 0.0f;
+        for(Ingrediente i : this.getIngrediente()) {
+            lipidos += i.getLipidos();
+        }
+        return lipidos;
+    }
+
+    public Float getProteinas() {
+        Float proteinas = 0.0f;
+        for(Ingrediente i : this.getIngrediente()) {
+            proteinas += i.getProteinas();
+        }
+        return proteinas;
     }
 }

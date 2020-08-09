@@ -7,15 +7,14 @@ import repositorio.PrologRepositorio;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class MainConsult {
     private static Query Platos;
     public static void main(String[] args) {
         PrologRepositorio prologRepositorio = PrologRepositorio.prologRepository();
-        Query q1 = new Query("consult", new Term[]{new Atom("src\\pp.pl")});
-        q1.hasSolution();
+//        Query q1 = new Query("consult", new Term[]{new Atom("src\\pp.pl")});
+//        q1.hasSolution();
         Ingrediente ingrediente = new Ingrediente();
         ingrediente.setNombre("mantequilla");
         ingrediente.setCarbohidratos(Float.parseFloat("10"));
@@ -49,10 +48,10 @@ public class MainConsult {
         receta.setAccion(accion);
         prologRepositorio.InsertRecipe(receta);
         //Query q2 = new Query("listing(receta)");
-        Set<String> plates = prologRepositorio.getAllPlatosIngredients(ingredientes);
+        //Set<String> plates = prologRepositorio.getAllPlatosIngredients();
         //Query q = new Query("listing(receta)");
         //q.hasSolution();
-        System.out.println(plates);
+        //System.out.println(plates);
 
     }
 }

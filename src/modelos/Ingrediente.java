@@ -6,15 +6,15 @@ public class Ingrediente {
     private Float proteinas;
     private Float carbohidratos;
 
+    public Ingrediente() {
+
+    }
+
     public Ingrediente(String nombre, Float lipidos, Float proteinas, Float carbohidratos) {
         this.nombre = nombre;
         this.lipidos = lipidos;
         this.proteinas = proteinas;
         this.carbohidratos = carbohidratos;
-    }
-
-    public Ingrediente() {
-
     }
 
     public String getNombre() {
@@ -47,5 +47,10 @@ public class Ingrediente {
 
     public void setCarbohidratos(Float carbohidratos) {
         this.carbohidratos = carbohidratos;
+    }
+
+    public String getNombreProlog() {
+        String procesado = nombre.replaceAll(" ", "_");
+        return procesado.toLowerCase();
     }
 }

@@ -19,10 +19,10 @@ plato(cake).
 plato(brownie).
 plato(cupcake).
 
-%Se tiene que la receta(plato, ingredientes, utencilio, accion).
-receta(cake, [vainilla, huevo, harina],[batidora], [batir]).
-receta(brownie, [huevo, harina, chocolate, polvo_hornear, mantequilla], [colador], [mezclar]).
-receta(cupcake, [huevo, harina, polvo_hornear, mantequilla, vainilla],[batidora], [batir]).
+%Se tiene que la receta(plato, ingredientes, utencilio, procedimiento).
+%receta(cake, [vainilla, huevo, harina],[batidora], [batir]).
+%receta(brownie, [huevo, harina, chocolate, polvo_hornear, mantequilla], [colador], mezclar).
+%receta(cupcake, [huevo, harina, polvo_hornear, mantequilla, vainilla],[batidora], batir).
 
 %Regla para que devuelva los platos que tienen ese ingrediente especifico.
 plato_de1_ingrediente(Plato, Ingrediente):- plato(Plato), receta(Plato, Ingredientes,_,_), miembro(Ingrediente,Ingredientes).

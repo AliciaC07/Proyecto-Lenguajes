@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visual.VentaPrincipalController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Acerca de">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Recetas">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TitledPane animated="false" collapsible="false" layoutY="1.0" prefHeight="271.0" prefWidth="1024.0" text="Busqueda">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="243.0" prefWidth="433.0">
+                                 <children>
+                                    <Text layoutX="24.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Preguntas" wrappingWidth="106.900390625" />
+                                    <ComboBox fx:id="cbxFiltro" layoutX="131.0" layoutY="24.0" onAction="#cambiarEstadoPreguntas" prefHeight="25.0" prefWidth="345.0" />
+                                    <Button fx:id="btnBuscar" layoutX="24.0" layoutY="196.0" mnemonicParsing="false" onAction="#buscarRecetas" prefHeight="35.0" prefWidth="95.0" text="Buscar" />
+                                    <TextField fx:id="cbxIngrediente1" layoutX="131.0" layoutY="69.0" prefHeight="25.0" prefWidth="200.0" />
+                                    <TextField fx:id="cbxIngrediente2" layoutX="131.0" layoutY="107.0" prefHeight="25.0" prefWidth="200.0" />
+                                    <TextField fx:id="cbxIngrediente3" layoutX="131.0" layoutY="144.0" prefHeight="25.0" prefWidth="201.0" />
+                                    <Text layoutX="24.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrediente:" wrappingWidth="75.900390625" />
+                                    <Text layoutX="24.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrediente:" wrappingWidth="75.900390625" />
+                                    <Text layoutX="24.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrediente:" wrappingWidth="75.900390625" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <TitledPane animated="false" collapsible="false" layoutX="-4.0" layoutY="272.0" prefHeight="374.0" prefWidth="1024.0" text="Resultados">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="tablaResultados" prefHeight="348.0" prefWidth="1024.0">
+                                      <columns>
+                                        <TableColumn fx:id="columnaReceta" prefWidth="253.0" text="Receta" />
+                                        <TableColumn fx:id="columnaCarbos" prefWidth="220.0" text="Carbohidratos" />
+                                          <TableColumn fx:id="columnaProteinas" prefWidth="170.0" text="Proteinas" />
+                                          <TableColumn fx:id="columnaLipidos" prefWidth="207.0" text="Lipidos" />
+                                          <TableColumn fx:id="columnaCalorias" prefWidth="173.0" text="Calorias" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Recomendaciones">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
