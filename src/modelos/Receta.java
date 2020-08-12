@@ -93,4 +93,18 @@ public class Receta {
         }
         return proteinas;
     }
+
+    public Float getCalorias(){
+        Float calorias = 0.0f;
+        Float carbo = 0.0f;
+        Float prote = 0.0f;
+        Float grasa = 0.0f;
+        for(Ingrediente i : this.getIngrediente()) {
+            carbo += i.getCarbohidratos() * 4;
+            prote += i.getProteinas() * 4;
+            grasa += i.getLipidos() * 9;
+            calorias += carbo + prote + grasa;
+        }
+        return calorias;
+    }
 }
